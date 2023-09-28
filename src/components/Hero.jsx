@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 
 const Section = styled.div`
   height: 100vh;
@@ -95,7 +97,20 @@ const Hero = () => {
         </Left>
         <Right>
           {/* 3d model */}
-          <Img src="./img/icn.png" />
+          <Canvas>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={1} />
+            <directionalLight position={[3, 2, 1]} />
+            <Sphere args={[1, 100, 200]} scale={1.6}>
+              <MeshDistortMaterial
+                color="#54217b"
+                attach="material"
+                distort={0.5}
+                speed={2}
+              />
+            </Sphere>
+          </Canvas>
+          <Img src="./img/hello.png" />
         </Right>
       </Container>
     </Section>

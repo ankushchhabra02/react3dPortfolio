@@ -12,9 +12,9 @@ const Map = () => {
     <ComposableMap
       projection="geoAzimuthalEqualArea"
       projectionConfig={{
-        rotate: [0, 0, 0], // Reset rotation
+        rotate: [-20, 0, 0], // Reset rotation
         center: [78.9629, 20.5937], // Center on India's coordinates
-        scale: 350, // Adjust the scale as needed
+        scale: 250, // Adjust the scale as needed
       }}
       style={{ width: "100%", height: "100%" }}
     >
@@ -32,7 +32,7 @@ const Map = () => {
       </Geographies>
       <Annotation
         subject={[78.9629, 20.5937]}
-        dx={-90}
+        dx={-70}
         dy={-30}
         connectorProps={{
           stroke: "white",
